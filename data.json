@@ -1,0 +1,87 @@
+{
+  "pairs": [
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Franz_von_Lenbach_-_Portrait_of_Otto_Eduard_Leopold_von_Bismarck_-_Walters_371007_-_View_B.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/9/98/Otto_von_Bismarck_1873.jpg",
+      "label": "Otto von Bismarck",
+      "correct": "gleich",
+      "info": "Otto von Bismarck (1815–1898) war preußischer Ministerpräsident und erster Reichskanzler. Er prägte die deutsche Einigung im 19. Jahrhundert.",
+      "source": "https://commons.wikimedia.org/wiki/Otto_von_Bismarck"
+    },
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/4/49/Victoria_in_her_Coronation_robes.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/20/Queen_Victoria_by_Bassano.png",
+      "label": "Queen Victoria",
+      "correct": "gleich",
+      "info": "Queen Victoria (1819–1901) regierte das Vereinigte Königreich über sechs Jahrzehnte. Ihre Herrschaft gilt als Höhepunkt des britischen Empires.",
+      "source": "https://commons.wikimedia.org/wiki/Queen_Victoria"
+    },
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Portrait_of_Emperor_Napoleon_III_of_France_in_Coronation_Robes%2C_by_Franz_Xaver_Winterhalter.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/7/71/Napoleon_III_1863.jpg",
+      "label": "Napoleon III.",
+      "correct": "gleich",
+      "info": "Napoleon III. (1808–1873) war Präsident der Zweiten französischen Republik und später Kaiser des Zweiten Französischen Kaiserreichs.",
+      "source": "https://commons.wikimedia.org/wiki/Napol%C3%A9on_III"
+    },
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/1/18/Robert_Warthm%C3%BCller_-_Bildnis_Kaiser_Wilhelm_II._%281889%29.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kaiser_Wilhelm_II_of_Germany_-_1902_%283x4_cropped%29.jpg",
+      "label": "Wilhelm II.",
+      "correct": "gleich",
+      "info": "Wilhelm II. (1859–1941) war der letzte deutsche Kaiser und König von Preußen und regierte bis zum Ende des Ersten Weltkriegs.",
+      "source": "https://commons.wikimedia.org/wiki/Wilhelm_II_of_Germany"
+    },
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/3/38/AbrahamLincolnOilPainting1869Restored.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Abraham_Lincoln_head_on_shoulders_photo_portrait.jpg",
+      "label": "Abraham Lincoln",
+      "correct": "gleich",
+      "info": "Abraham Lincoln (1809–1865) war der 16. Präsident der USA und führte das Land durch den Bürgerkrieg. Er ist besonders für die Abschaffung der Sklaverei bekannt.",
+      "source": "https://commons.wikimedia.org/wiki/Abraham_Lincoln"
+    },
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/1/14/Ilya_Efimovich_Repin_%281844-1930%29_-_Portrait_of_Leo_Tolstoy_%281887%29.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Leo_Tolstoy_1897%2C_black_and_white%2C_37767u.jpg",
+      "label": "Leo Tolstoi",
+      "correct": "gleich",
+      "info": "Leo Tolstoi (1828–1910) war ein russischer Schriftsteller („Krieg und Frieden“, „Anna Karenina“) und wichtiger Kritiker von Krieg, Staat und Kirche.",
+      "source": "https://commons.wikimedia.org/wiki/Leo_Tolstoy"
+    },
+
+    // Vergleichspaare (nicht gleich)
+
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Franz_von_Lenbach_-_Portrait_of_Otto_Eduard_Leopold_von_Bismarck_-_Walters_371007_-_View_B.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/20/Queen_Victoria_by_Bassano.png",
+      "label": "Bismarck vs. Victoria",
+      "correct": "nicht",
+      "info": "Vergleich zwischen Otto von Bismarck, dem preußisch-deutschen Reichskanzler, und Queen Victoria, der britischen Monarchin.",
+      "source": "https://commons.wikimedia.org/wiki/19th_century"
+    },
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/3/38/AbrahamLincolnOilPainting1869Restored.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/7/71/Napoleon_III_1863.jpg",
+      "label": "Lincoln vs. Napoleon III.",
+      "correct": "nicht",
+      "info": "Hier werden Abraham Lincoln, Präsident der USA, und Napoleon III., Kaiser der Franzosen, gegenübergestellt.",
+      "source": "https://commons.wikimedia.org/wiki/19th_century"
+    },
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/1/14/Ilya_Efimovich_Repin_%281844-1930%29_-_Portrait_of_Leo_Tolstoy_%281887%29.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kaiser_Wilhelm_II_of_Germany_-_1902_%283x4_cropped%29.jpg",
+      "label": "Tolstoi vs. Wilhelm II.",
+      "correct": "nicht",
+      "info": "Ein pazifistischer Schriftsteller (Tolstoi) im Vergleich zu einem Monarchen eines imperialen Kaiserreichs (Wilhelm II.).",
+      "source": "https://commons.wikimedia.org/wiki/Leo_Tolstoy"
+    },
+    {
+      "painting": "https://upload.wikimedia.org/wikipedia/commons/4/49/Victoria_in_her_Coronation_robes.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/9/98/Otto_von_Bismarck_1873.jpg",
+      "label": "Victoria vs. Bismarck",
+      "correct": "nicht",
+      "info": "Queen Victoria als Symbol des britischen Empires und Bismarck als Architekt des deutschen Nationalstaats stehen für unterschiedliche Machtzentren im 19. Jahrhundert.",
+      "source": "https://commons.wikimedia.org/wiki/Queen_Victoria"
+    }
+  ]
+}
