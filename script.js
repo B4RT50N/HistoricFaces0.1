@@ -24,27 +24,55 @@ const roundSpan = document.getElementById("round");
 const resultImg = document.getElementById("resultImg");
 const resultMessage = document.getElementById("resultMessage");
 const restartBtn = document.getElementById("restartBtn");
+const startBtn = document.getElementById("startBtn");
 
-document.getElementById("startBtn").onclick = () => {
+startBtn.addEventListener("click", () => {
   startScreen.classList.add("hidden");
   gameScreen.classList.remove("hidden");
-};
+});
 
+// Daten laden
 fetch("data.json")
-  .then(res => res.json())
-  .then(j => {
-    data = j.pairs;
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error("data.json konnte nicht geladen werden: " + res.status);
+    }
+    return res.json();
+  })
+  .then((json) => {
+    if (!json || !Array.isArray(json.pairs)) {
+      throw new Error("Ungültiges Format in data.json");
+    }
+    data = json.pairs;
+    index = 0;
+    score = 0;
     loadRound();
+  })
+  .catch((err) => {
+    console.error(err);
+    feedback.textContent = "Fehler beim Laden der Daten. Prüfe data.json.";
   });
 
 function loadRound() {
+  if (!data || data.length === 0) {
+    feedback.textContent = "Keine Daten gefunden.";
+    return;
+  }
+  if (index >= data.length) {
+    endGame();
+    return;
+  }
+
   const item = data[index];
+
   paintingImg.src = item.painting;
   photoImg.src = item.photo;
   pairLabel.textContent = item.label;
+
   feedback.textContent = "";
   historyInfo.textContent = "";
   sourceInfo.textContent = "";
+
   nextBtn.disabled = true;
   btnEqual.disabled = false;
   btnNotEqual.disabled = false;
@@ -52,33 +80,43 @@ function loadRound() {
 
 function answer(choice) {
   const item = data[index];
-  if (choice === item.correct) {
+  const correct = item.correct;
+
+  if (choice === correct) {
     feedback.textContent = "✔️ Richtig!";
+    feedback.style.color = "#22c55e";
     score++;
   } else {
     feedback.textContent = "❌ Falsch!";
+    feedback.style.color = "#ef4444";
   }
 
-  historyInfo.textContent = item.info;
-  sourceInfo.innerHTML = `<a href="${item.source}" target="_blank">Quelle</a>`;
+  historyInfo.textContent = item.info || "";
+  if (item.source) {
+    sourceInfo.innerHTML = `<a href="${item.source}" target="_blank" rel="noreferrer">Quelle öffnen</a>`;
+  } else {
+    sourceInfo.textContent = "";
+  }
 
   btnEqual.disabled = true;
   btnNotEqual.disabled = true;
   nextBtn.disabled = false;
 
-  scoreSpan.textContent = score;
-  roundSpan.textContent = index + 1;
+  scoreSpan.textContent = String(score);
+  roundSpan.textContent = String(index + 1);
 }
 
-btnEqual.onclick = () => answer("gleich");
-btnNotEqual.onclick = () => answer("nicht");
+btnEqual.addEventListener("click", () => answer("gleich"));
+btnNotEqual.addEventListener("click", () => answer("nicht"));
 
-nextBtn.onclick = () => {
+nextBtn.addEventListener("click", () => {
   index++;
   if (index >= data.length) {
     endGame();
-  } else loadRound();
-};
+  } else {
+    loadRound();
+  }
+});
 
 function endGame() {
   gameScreen.classList.add("hidden");
@@ -86,12 +124,15 @@ function endGame() {
 
   resultMessage.textContent = `Du hast ${score} von ${data.length} richtig!`;
 
-  // Ergebnisbild
-  resultImg.src = score >= data.length / 2
-    ? "https://upload.wikimedia.org/wikipedia/commons/2/22/Royal_Crowns.jpg"
-    : "https://upload.wikimedia.org/wikipedia/commons/f/f1/Broken_mirror.jpg";
+  resultImg.src =
+    score >= data.length / 2
+      ? "https://upload.wikimedia.org/wikipedia/commons/2/22/Royal_Crowns.jpg"
+      : "https://upload.wikimedia.org/wikipedia/commons/f/f1/Broken_mirror.jpg";
+  resultImg.alt = "Ergebnisbild";
 }
 
-restartBtn.onclick = () => {
+restartBtn.addEventListener("click", () => {
+  // komplettes Spiel neu laden
   location.reload();
-};
+});
+
