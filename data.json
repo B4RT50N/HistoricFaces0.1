@@ -49,7 +49,6 @@
       "source": "https://commons.wikimedia.org/wiki/Leo_Tolstoy"
     },
 
-    // Vergleichspaare (nicht gleich)
 
     {
       "painting": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Franz_von_Lenbach_-_Portrait_of_Otto_Eduard_Leopold_von_Bismarck_-_Walters_371007_-_View_B.jpg",
@@ -85,3 +84,4 @@
     }
   ]
 }
+
